@@ -1,4 +1,4 @@
-const fibonacci = require('./fibonacci')
+const fibonacci = require('util/fibonacci')
 
 describe('fibonacci', function() {
   it('works', function() {

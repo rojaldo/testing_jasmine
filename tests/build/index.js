@@ -72,6 +72,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__spec_bar_spec__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__spec_foo_spec__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__spec_calculator_spec__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__spec_leapYears_spec__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__spec_leapYears_spec___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__spec_leapYears_spec__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__spec_removeFromArray_spec__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__spec_removeFromArray_spec___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__spec_removeFromArray_spec__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__spec_repeatString_spec__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__spec_repeatString_spec___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__spec_repeatString_spec__);
+
+
+
 
 
 
@@ -270,6 +279,110 @@ const calculator = {
 };
 /* harmony export (immutable) */ __webpack_exports__["a"] = calculator;
 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const leapYears = __webpack_require__(8);
+
+describe('leapYears', function () {
+  it('works with non century years', function () {
+    expect(leapYears(1996)).toEqual(true);
+  });
+  xit('works with non century years', function () {
+    expect(leapYears(1997)).toEqual(false);
+  });
+  xit('works with ridiculously futuristic non century years', function () {
+    expect(leapYears(34992)).toEqual(true);
+  });
+  xit('works with century years', function () {
+    expect(leapYears(1900)).toEqual(false);
+  });
+  xit('works with century years', function () {
+    expect(leapYears(1600)).toEqual(true);
+  });
+  xit('works with century years', function () {
+    expect(leapYears(700)).toEqual(false);
+  });
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+const leapYears = function leapYears() {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+};
+
+module.exports = leapYears;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const removeFromArray = __webpack_require__(10);
+
+describe('removeFromArray', function () {
+  it('removes a single value', function () {
+    expect(removeFromArray([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
+  });
+  xit('removes multiple values', function () {
+    expect(removeFromArray([1, 2, 3, 4], 3, 2)).toEqual([1, 4]);
+  });
+  xit('ignores non present values', function () {
+    expect(removeFromArray([1, 2, 3, 4], 7, "tacos")).toEqual([1, 2, 3, 4]);
+  });
+  xit('ignores non present values, but still works', function () {
+    expect(removeFromArray([1, 2, 3, 4], 7, 2)).toEqual([1, 3, 4]);
+  });
+  xit('can remove all values', function () {
+    expect(removeFromArray([1, 2, 3, 4], 1, 2, 3, 4)).toEqual([]);
+  });
+  xit('works with strings', function () {
+    expect(removeFromArray(["hey", 2, 3, "ho"], "hey", 3)).toEqual([2, "ho"]);
+  });
+});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+const removeFromArray = function removeFromArray() {};
+
+module.exports = removeFromArray;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const repeatString = __webpack_require__(12);
+
+describe('repeatString', function () {
+  it('repeats the string', function () {
+    expect(repeatString('hey', 3)).toEqual('heyheyhey');
+  });
+  xit('repeats the string many times', function () {
+    expect(repeatString('hey', 10)).toEqual('heyheyheyheyheyheyheyheyheyhey');
+  });
+  xit('repeats the string 1 times', function () {
+    expect(repeatString('hey', 1)).toEqual('hey');
+  });
+  xit('repeats the string 0 times', function () {
+    expect(repeatString('hey', 0)).toEqual('');
+  });
+  xit('returns ERROR with negative numbers', function () {
+    expect(repeatString('hey', -1)).toEqual('ERROR');
+  });
+});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+const repeatString = function repeatString() {};
+
+module.exports = repeatString;
 
 /***/ })
 /******/ ]);

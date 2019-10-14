@@ -1,4 +1,4 @@
-const removeFromArray = require('./removeFromArray')
+const removeFromArray = require('util/removeFromArray')
 
 describe('removeFromArray', function() {
   it('removes a single value', function() {
