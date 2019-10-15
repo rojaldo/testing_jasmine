@@ -1,6 +1,6 @@
 const repeatString = require('util/repeatString')
 
-describe('repeatString', function() {
+xdescribe('repeatString', function() {
   it('repeats the string', function() {
     expect(repeatString('hey', 3)).toEqual('heyheyhey');
   });

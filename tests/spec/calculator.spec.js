@@ -8,6 +8,10 @@ describe('add', function() {
 		expect(calculator.add(0,0)).toEqual(0);
 	});
 
+	it('adds undefined and 3', function() {
+		expect(function(){calculator.add(undefined,3)}).toThrow();
+	});
+
 	it('adds 2 and 2', function() {
 		expect(calculator.add(2,2)).toEqual(4);
 	});

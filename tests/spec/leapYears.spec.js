@@ -1,6 +1,6 @@
 const leapYears = require('util/leapYears')
 
-describe('leapYears', function() {
+xdescribe('leapYears', function() {
   it('works with non century years', function() {
     expect(leapYears(1996)).toEqual(true);
   });

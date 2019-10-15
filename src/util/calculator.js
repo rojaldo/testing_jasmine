@@ -1,4 +1,7 @@
 export function add(a, b) {
+    if(a === undefined || b === undefined) {
+        throw 'error';
+    }
     return a + b;
 }
 

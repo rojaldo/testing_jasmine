@@ -149,6 +149,12 @@ describe('add', function () {
 		expect(__WEBPACK_IMPORTED_MODULE_0_util_calculator__["a" /* calculator */].add(0, 0)).toEqual(0);
 	});
 
+	it('adds undefined and 3', function () {
+		expect(function () {
+			__WEBPACK_IMPORTED_MODULE_0_util_calculator__["a" /* calculator */].add(undefined, 3);
+		}).toThrow();
+	});
+
 	it('adds 2 and 2', function () {
 		expect(__WEBPACK_IMPORTED_MODULE_0_util_calculator__["a" /* calculator */].add(2, 2)).toEqual(4);
 	});
@@ -232,6 +238,9 @@ describe('factorial', function () {
 /* unused harmony export power */
 /* unused harmony export factorial */
 function add(a, b) {
+    if (a === undefined || b === undefined) {
+        throw 'error';
+    }
     return a + b;
 }
 
@@ -286,7 +295,7 @@ const calculator = {
 
 const leapYears = __webpack_require__(8);
 
-describe('leapYears', function () {
+xdescribe('leapYears', function () {
   it('works with non century years', function () {
     expect(leapYears(1996)).toEqual(true);
   });
@@ -323,7 +332,7 @@ module.exports = leapYears;
 
 const removeFromArray = __webpack_require__(10);
 
-describe('removeFromArray', function () {
+xdescribe('removeFromArray', function () {
   it('removes a single value', function () {
     expect(removeFromArray([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
   });
@@ -358,7 +367,7 @@ module.exports = removeFromArray;
 
 const repeatString = __webpack_require__(12);
 
-describe('repeatString', function () {
+xdescribe('repeatString', function () {
   it('repeats the string', function () {
     expect(repeatString('hey', 3)).toEqual('heyheyhey');
   });
